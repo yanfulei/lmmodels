@@ -2,6 +2,6 @@ package top.lsmod.uimodel;
 
 import android.app.Activity;
 
-public class BaseTitleActivity extends Activity {
+public class BaseLauncherActivity extends Activity {
 
 }
