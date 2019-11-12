@@ -24,9 +24,9 @@ public abstract class FlBaseActivity extends Activity {
     //获取TAG的activity名称
     protected final String TAG = this.getClass().getSimpleName();
     //是否显示标题栏
-    private boolean isShowTitle = true;
+    private boolean isShowTitle = false;
     //是否显示状态栏
-    private boolean isShowStatusBar = true;
+    private boolean isShowStatusBar = false;
     //是否允许旋转屏幕
     private boolean isAllowScreenRoate = true;
     //封装Toast对象
