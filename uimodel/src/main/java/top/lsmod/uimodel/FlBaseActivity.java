@@ -1,6 +1,7 @@
 package top.lsmod.uimodel;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -12,8 +13,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import top.lsmod.uimodel.base.FlBaseInterfaceReqBean;
 import top.lsmod.uimodel.base.FlBaseInterfaceRspBean;
 import top.lsmod.uimodel.base.IHttpFactory;
@@ -21,7 +20,7 @@ import top.lsmod.uimodel.base.impl.OkHttpImpl;
 import top.lsmod.uimodel.utils.ActivityCollector;
 import top.lsmod.uimodel.utils.HttpUtils;
 
-public abstract class FlBaseActivity extends AppCompatActivity {
+public abstract class FlBaseActivity extends Activity {
     //获取TAG的activity名称
     protected final String TAG = this.getClass().getSimpleName();
     //是否显示标题栏
