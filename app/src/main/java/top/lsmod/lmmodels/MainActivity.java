@@ -1,15 +1,35 @@
 package top.lsmod.lmmodels;
 
-import android.os.Bundle;
+import top.lsmod.lmmodels.bean.TestNetWorkBean;
+import top.lsmod.uimodel.FlBaseActivity;
+import top.lsmod.uimodel.base.FlBaseInterfaceReqBean;
+import top.lsmod.uimodel.base.FlBaseInterfaceRspBean;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FlBaseActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int initLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+        TestNetWorkBean testNetWorkBean = new TestNetWorkBean();
+        testNetWorkBean.setCode("utf-8");
+        testNetWorkBean.setQ("24k");
+        sendRequest(BuildConfig.DEMO_INTERFACE, new FlBaseInterfaceReqBean(InterfaceNetWorks.TestTaoBao, testNetWorkBean));
+    }
+
+    @Override
+    public void onNetWorkResponse(FlBaseInterfaceRspBean interfaceRspBean) {
+        super.onNetWorkResponse(interfaceRspBean);
+        if (interfaceRspBean.getInterfaceId() == (int) InterfaceNetWorks.TestTaoBao[1]) {
+            showToast(interfaceRspBean.getHttpResult());
+        }
     }
 }

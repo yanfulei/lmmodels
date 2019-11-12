@@ -10,6 +10,13 @@ public class FlBaseInterfaceReqBean {
     // 请求的参数
     private Object param;
 
+    public FlBaseInterfaceReqBean(Object[] interfaces, Object param) {
+        this.interfaceName = String.valueOf(interfaces[0]);
+        this.interfaceId = Integer.valueOf(String.valueOf(interfaces[1]));
+        this.interfaceType = String.valueOf(interfaces[2]);
+        this.param = param;
+    }
+
     public Object getParam() {
         return param;
     }
