@@ -28,11 +28,11 @@ public abstract class FlBaseFragment extends Fragment {
         return root;
     }
 
-    abstract void initData();
+    protected abstract void initData();
 
-    abstract void initView();
+    protected abstract void initView();
 
-    abstract int initLayout();
+    protected abstract int initLayout();
 
 
     /**
