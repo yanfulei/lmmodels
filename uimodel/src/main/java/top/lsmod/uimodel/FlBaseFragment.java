@@ -22,7 +22,7 @@ public abstract class FlBaseFragment extends Fragment {
 
         //设置布局
         View root = inflater.inflate(initLayout(), container, false);
-        ButterKnife.bind(getActivity());
+        ButterKnife.bind(this, root);
         //初始化控件
         initView();
         //设置数据
