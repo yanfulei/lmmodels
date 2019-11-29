@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import butterknife.ButterKnife;
 import top.lsmod.uimodel.base.FlBaseInterfaceReqBean;
 import top.lsmod.uimodel.base.FlBaseInterfaceRspBean;
 import top.lsmod.uimodel.base.IHttpFactory;
@@ -21,6 +22,7 @@ public abstract class FlBaseFragment extends Fragment {
 
         //设置布局
         View root = inflater.inflate(initLayout(), container, false);
+        ButterKnife.bind(getActivity());
         //初始化控件
         initView();
         //设置数据
