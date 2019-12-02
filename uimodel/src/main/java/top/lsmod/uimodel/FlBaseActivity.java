@@ -13,6 +13,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+
+import butterknife.ButterKnife;
 import top.lsmod.uimodel.base.FlBaseInterfaceReqBean;
 import top.lsmod.uimodel.base.FlBaseInterfaceRspBean;
 import top.lsmod.uimodel.base.IHttpFactory;
@@ -49,6 +51,7 @@ public abstract class FlBaseActivity extends Activity {
 
         //设置布局
         setContentView(initLayout());
+        ButterKnife.bind(this);
         //设置屏幕是否可旋转
         if (!isAllowScreenRoate) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
